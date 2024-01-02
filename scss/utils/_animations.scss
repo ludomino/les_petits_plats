@@ -1,0 +1,22 @@
+@keyframes collapse {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+
+    max-height: 259px;
+  }
+}
+@keyframes collapse-up {
+  from {
+    opacity: 1;
+    height: 259px;
+  }
+  to {
+    opacity: 0;
+
+    height: 0;
+  }
+}

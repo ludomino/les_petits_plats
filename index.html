@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <title>Les Petits Plats</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <a
+          href="./index.html"
+          class="header_logo"
+          aria-label="Retour accueil Les petits Plats">
+          <img src="assets/icon/Logo.png" alt="logo Les Petits Plats" />
+        </a>
+
+        <h1>
+          CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET
+          DÉLICIEUSES
+        </h1>
+
+        <form class="header_form" id="header-form">
+          <label for="search" class="header_label"></label>
+          <input
+            id="search"
+            class="header_input-search"
+            type="search"
+            placeholder="Rechercher une recette, un ingrédient, ..."
+            maxlength="35" />
+          <button class="header_magnifier">
+            <img src="assets/icon/magnifier-bg-black.svg" alt="loupe" />
+          </button>
+          <div class="header_input-clear-btn"></div>
+        </form>
+      </div>
+    </header>
+    <main class="main">
+      <section class="filter">
+        <div class="filter_filters-and-count">
+          <div class="filter_container">
+            <div class=" filter_wrapper ">
+              <img
+                src="assets/icon/chevron.svg"
+                class="filter_chevron"
+                alt="chevron ouvrir liste"
+                id="ingredients-chevron" />
+              <button class=" filter_btn " id="ingredients-btn">
+                Ingrédients
+              </button>
+
+              <div class="filter_collapser  " id="ingredients-filter">
+                <div class="filter_search-wrapper ">
+                  <input
+                    type="search"
+                    class="filter_search"
+                    id="ingredients-search" />
+                  <img
+                    src="assets/icon/magnifier.svg"
+                    class="filter_magnifier"
+                    alt="loupe rechercher" />
+                </div>
+
+                <ul class="filter_list" id="ingredients-list"></ul>
+              </div>
+            </div>
+
+            <div class=" filter_wrapper ">
+              <img
+                src="assets/icon/chevron.svg"
+                class="filter_chevron"
+                alt="chevron ouvrir liste"
+                id="devices-chevron" />
+              <button class=" filter_btn " id="devices-btn">Appareils</button>
+              <div class="filter_collapser  " id="devices-filter">
+                <div class="filter_search-wrapper ">
+                  <input
+                    type="search"
+                    class="filter_search"
+                    id="devices-search" />
+                  <img
+                    src="assets/icon/magnifier.svg"
+                    class="filter_magnifier"
+                    alt="loupe rechercher" />
+                </div>
+
+                <ul class="filter_list" id="devices-list"></ul>
+              </div>
+            </div>
+            <div class=" filter_wrapper  ">
+              <img
+                src="assets/icon/chevron.svg"
+                class="filter_chevron"
+                alt="chevron ouvrir liste"
+                id="ustensils-chevron" />
+              <button class="filter_btn " id="ustensils-btn">
+                Ustensiles
+              </button>
+              <div class="filter_collapser  " id="ustensils-filter">
+                <div class="filter_search-wrapper ">
+                  <input
+                    type="search"
+                    class="filter_search"
+                    id="ustensils-search" />
+                  <img
+                    src="assets/icon/magnifier.svg"
+                    class="filter_magnifier"
+                    alt="loupe rechercher" />
+                </div>
+
+                <div class="filter_list-wrapper">
+                  <ul class="filter_list" id="ustensils-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span id="recipeCounter" class="filter_recipe-count"> Recettes</span>
+        </div>
+        <div id="tags-container" class="tags-container"></div>
+      </section>
+
+      <section class="cards-container" id="card-container"></section>
+    </main>
+    <script type="module" src="js/page/index.js"></script>
+    <script type="module" src="js/module/filter.js"></script>
+  </body>
+</html>

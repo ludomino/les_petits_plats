@@ -1,0 +1,134 @@
+header {
+  width: 100%;
+  height: 667px;
+  margin: 0;
+  background-image: url(../assets/icon/banner.png);
+  background-size: cover;
+}
+.header {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  &_logo {
+    display: inline-block;
+    margin: 70px 50px 0;
+    img {
+      margin-right: 3px;
+    }
+  }
+
+  h1 {
+    margin: 0;
+    margin: 220px auto 30px;
+    text-align: center;
+    max-width: 670px;
+  }
+  &_form {
+    background-color: white;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: clamp(30px, 75vw, 954px);
+    margin: 0 auto;
+    height: 72px;
+  }
+
+  &_input-search {
+    padding-left: 35px;
+    border: 0;
+    margin: 0 20px 0 0;
+    height: 100%;
+    flex-grow: 1;
+    color: $color-2;
+    font-size: 1rem;
+    &:focus {
+      outline: none;
+    }
+  }
+  &_magnifier {
+    border: 0;
+    background: white;
+    margin: 0 10px;
+    padding: 2px 0 0 0;
+  }
+  &_input-clear-btn {
+    cursor: pointer;
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    right: 90px;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  header {
+    width: 100%;
+    height: 450px;
+    margin: 0;
+  }
+  .header {
+    h1 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      margin: 50px auto 30px;
+      padding: 0 20px;
+
+      max-width: 670px;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  header {
+    height: 380px;
+  }
+  .header {
+    h1 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      margin: 50px auto;
+      padding: 0 20px;
+
+      max-width: 670px;
+    }
+    &_logo {
+      margin-top: 50px;
+    }
+    &_form {
+      height: 50px;
+    }
+    &_magnifier {
+      img {
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    &_input-search {
+      padding-left: 25px;
+      font-size: 0.875rem;
+    }
+    &_input-clear-btn {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    &_magnifier {
+      img {
+        height: 20px;
+      }
+    }
+    &_form {
+      align-self: center;
+      margin: 0;
+    }
+  }
+}

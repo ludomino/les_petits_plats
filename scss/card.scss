@@ -1,0 +1,67 @@
+.card {
+  margin: 0 auto;
+  position: relative;
+  max-width: 400px;
+  height: 100%;
+  border-radius: 21px;
+  padding-bottom: 40px;
+  box-shadow: 0px 4px 34px 30px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  background-color: white;
+  &_timer {
+    position: absolute;
+    top: 21px;
+    right: 20px;
+    height: 26px;
+    line-height: 26px;
+    width: 65px;
+    border-radius: 21px;
+    color: $color-1;
+    background-color: $color-3;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+  &_img-wrapper {
+    height: 253px;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+  &_img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &_title {
+    font-family: "Anton", sans-serif;
+    margin: 0 25px 32px;
+  }
+  &_recipe,
+  &_ingredients {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $color-2;
+    margin: 0 25px 15px;
+  }
+  &_details {
+    margin: 0 25px 32px;
+    font-size: 0.875rem;
+  }
+
+  &_ingredients-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 25px;
+    gap: 21px 25px;
+    font-size: 0.875rem;
+    p:first-child {
+      color: $color-1;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    p + p {
+      color: $color-2;
+      font-weight: 400;
+    }
+  }
+}
