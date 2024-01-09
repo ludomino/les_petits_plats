@@ -1,34 +1,37 @@
 // recherche les titres et descriptions
 const titleAndDescFilter = (data, searchWords, results) => {
-  data.forEach((recipe) => {
-    const lowerCaseName = recipe.name.toLowerCase()
-    const lowerCaseDescription = recipe.description.toLowerCase()
-
+  for (let i = 0; i < data.length; i++) {
+    const recipe = data[i]
     if (
       searchWords.every((word) => {
         return (
-          lowerCaseName.includes(word.toLowerCase()) ||
-          lowerCaseDescription.includes(word.toLowerCase())
+          recipe.name.toLowerCase().includes(word.toLowerCase()) ||
+          recipe.description.toLowerCase().includes(word.toLowerCase())
         )
       })
     ) {
       results.add(recipe)
     }
-  })
+  }
 }
 
 // recherche dans les listes d'ingrédients
 const ingredientsFilter = (data, searchWords, results) => {
-  const ingredientsResults = data.filter((recipe) => {
-    return recipe.ingredients.some((obj) =>
-      searchWords.every((word) =>
-        obj.ingredient.toLowerCase().includes(word.toLowerCase())
-      )
-    )
-  })
-
-  ingredientsResults.forEach((recipe) => results.add(recipe))
-}
+    for (let i = 0; i < data.length; i++) {
+      const recipe = data[i];
+      for (let j = 0; j < recipe.ingredients.length; j++) {
+        const obj = recipe.ingredients[j]
+        if (
+          searchWords.every((word) => {
+            return obj.ingredient.toLowerCase().includes(word.toLowerCase())
+          })
+        ) {
+          results.add(recipe)
+          break // Break the inner loop if a match is found
+        }
+      }
+    }
+  }
 
 // total des recettes affichées
 const totalRecipe = (data) => {
