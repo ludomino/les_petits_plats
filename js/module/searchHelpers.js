@@ -1,31 +1,33 @@
 // recherche les titres et descriptions
-const titleAndDescFilter= (data, searchWords, mergedResults) => {
+const titleAndDescFilter = (data, searchWords, results) => {
   data.forEach((recipe) => {
+    const lowerCaseName = recipe.name.toLowerCase()
+    const lowerCaseDescription = recipe.description.toLowerCase()
+
     if (
       searchWords.every((word) => {
         return (
-          recipe.name.toLowerCase().includes(word.toLowerCase()) ||
-          recipe.description.toLowerCase().includes(word.toLowerCase())
+          lowerCaseName.includes(word.toLowerCase()) ||
+          lowerCaseDescription.includes(word.toLowerCase())
         )
       })
     ) {
-      mergedResults.add(recipe)
+      results.add(recipe)
     }
   })
 }
 
 // recherche dans les listes d'ingrédients
-const ingredientsFilter = (data, searchWords, mergedResults) => {
+const ingredientsFilter = (data, searchWords, results) => {
   const ingredientsResults = data.filter((recipe) => {
     return recipe.ingredients.some((obj) =>
-
-      searchWords.every((word) => {
-        return obj.ingredient.toLowerCase().includes(word.toLowerCase())
-      })
+      searchWords.every((word) =>
+        obj.ingredient.toLowerCase().includes(word.toLowerCase())
+      )
     )
   })
 
-  ingredientsResults.forEach((recipe) => mergedResults.add(recipe))
+  ingredientsResults.forEach((recipe) => results.add(recipe))
 }
 
 // total des recettes affichées

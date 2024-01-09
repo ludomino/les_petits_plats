@@ -31,10 +31,10 @@ const initPage = () => {
 }
 
 // render cards && total recipe && listFilter
-const renderRecipePage = (dataRecipes, inputValue) => {
-  renderCards(dataRecipes, inputValue)
-  totalRecipe(dataRecipes)
-  listFilters(dataRecipes)
+const renderRecipePage = (recipesData, inputValue) => {
+  renderCards(recipesData, inputValue)
+  totalRecipe(recipesData)
+  listFilters(recipesData)
 }
 
 //  Searchbar banner
@@ -67,10 +67,9 @@ const renderList = (data, listElement, tagType) => {
   listElement.innerHTML = '' // Vide le contenu de l'élément de liste HTML
   list.sort() // Trie la liste alphabétiquement
   list.forEach((item) => {
-
     // Si l'item figure dans les tags => déplace en haut de la liste et ajoute un bouton de suppression.
-
     // Si l'item ne figure pas dans les tags => ajoute un eventListener pour ajouter le tag au clic.
+
     if (tagsList.some((e) => e.tag === item)) {
       const li = document.createElement('li')
       li.className = 'filter_list-li filter_list-li--selected'
@@ -116,6 +115,7 @@ const tagHandler = (tagName, type) => {
   const newTag = { tag: tagName, filter: type }
   tagsList.push(newTag)
   filterSection.classList.add('filter--with-tags') // Ajoute une classe pour afficher le filtre avec des tags
+
   // Crée un élément de tag avec un bouton de suppression et l'ajoute à la section des tags
   const btn = document.createElement('div')
   btn.className = 'tags'
@@ -176,10 +176,10 @@ const updateRecipesListThroughTags = () => {
 }
 
 // Fonction pour créer les listes de recherche par tag
-const listFilters = (dataRecipes) => {
-  setIngredientsList(dataRecipes)
-  setdevicesList(dataRecipes)
-  setUstensilsList(dataRecipes)
+const listFilters = (recipesData) => {
+  setIngredientsList(recipesData)
+  setdevicesList(recipesData)
+  setUstensilsList(recipesData)
 }
 
 // Fonction pour initialiser la liste des ingrédients
